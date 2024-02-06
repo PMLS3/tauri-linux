@@ -1,0 +1,17 @@
+.PinPage {
+
+}
+
+.PinChar {
+  background: #6c757d;
+  height: 10px;
+  border: 2px solid darken(#6c757d, 5%);
+  border-radius: 5px;
+}
+
+.PinCharActive {
+  background: #FF4D00;
+  height: 10px;
+  border: 2px solid darken(#FF4D00, 5%);
+  border-radius: 5px;
+}

@@ -1,0 +1,65 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "kiosk",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "os": {
+        "all": true
+      },
+      "all": true,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "protocol": {
+        "asset": true,
+        "assetScope": ["$APPCACHE/**", "$RESOURCE/**"]
+      },
+      "fs": {
+        "all": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "exists": true,
+        "scope": ["*/**"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.kiosk.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost; connect-src 'self' ws://kiosk.local:8080"
+    },
+    "windows": [
+      {
+        "fullscreen": true,
+        "resizable": true,
+        "title": "kiosk",
+        "width": 1200,
+        "height": 600
+      }
+    ]
+  }
+}
