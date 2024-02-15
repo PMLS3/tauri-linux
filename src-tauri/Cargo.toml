@@ -6,6 +6,7 @@ authors = ["you"]
 license = ""
 repository = ""
 edition = "2021"
+rust-version = "1.65"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -13,11 +14,27 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "api-all"] }
-serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5", features = [ "api-all", "dialog-message", "fs-create-dir", "fs-read-dir", "fs-write-file", "icon-ico", "notification-all", "os-all", "path-all", "process-relaunch", "shell-open", "system-tray", "window-close", "window-maximize", "window-minimize", "window-set-decorations", "window-set-focus", "window-set-fullscreen", "window-set-size", "window-start-dragging", "window-unmaximize", "window-unminimize"] }
 serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+window-shadows = {git = "https://github.com/tauri-apps/window-shadows", branch = "dev" }
+tokio = { version = "1.36.0", features = ["time"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+dbus = "0.9"
 
 [features]
+default = ["custom-protocol"]
 # this feature is used for production builds or when `devPath` points to the filesystem
 # DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort" # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true # Enables link to optimizations
+opt-level = "s" # Optimize for binary size
+# strip = true  # Automatically strip symbols from the binary.
