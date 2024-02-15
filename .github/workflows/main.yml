@@ -61,7 +61,7 @@ jobs:
 
       - name: Build frontend
         run: |
-          pnpm --frozen-lockfile
+          pnpm install --frozen-lockfile
           pnpm build
 
       - name: Build Tauri app
