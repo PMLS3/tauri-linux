@@ -58,6 +58,15 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build
 
+      - name: Setup ARM build environment
+        uses: pguyot/arm-runner-action@v2.5.2
+        with:
+          base_image: dietpi:rpi_armv8_bullseye
+          cpu: cortex-a53
+          bind_mount_repository: true
+          image_additional_mb: 10240
+          optimize_image: false
+
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
         env:
