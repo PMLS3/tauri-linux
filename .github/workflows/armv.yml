@@ -29,6 +29,9 @@ jobs:
         platform: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
     needs: changelog
+    defaults:
+      run:
+        working-directory: src-tauri
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -61,8 +64,6 @@ jobs:
           bind_mount_repository: true
           image_additional_mb: 10240
           optimize_image: false
-        run: |
-          cd src-tauri && cargo build --verbose
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
