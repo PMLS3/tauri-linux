@@ -22,6 +22,11 @@ tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", 
 tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 window-shadows = {git = "https://github.com/tauri-apps/window-shadows", branch = "dev" }
 tokio = { version = "1.36.0", features = ["time"] }
+openssl-sys = {version = "0.9", features = ["vendored"] }
+
+
+[target.armv7-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 dbus = "0.9"
@@ -38,3 +43,5 @@ codegen-units = 1 # Compile crates one after another so the compiler can optimiz
 lto = true # Enables link to optimizations
 opt-level = "s" # Optimize for binary size
 # strip = true  # Automatically strip symbols from the binary.
+
+

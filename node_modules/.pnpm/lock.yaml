@@ -26,6 +26,9 @@ dependencies:
   '@tauri-apps/api':
     specifier: ^1.5.3
     version: 1.5.3
+  '@tauri-apps/cli-linux-x64-gnu':
+    specifier: ^1.5.10
+    version: 1.5.10
   '@testing-library/jest-dom':
     specifier: ^6.4.2
     version: 6.4.2(@types/jest@29.5.12)(jest@27.5.1)
@@ -3166,6 +3169,13 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@tauri-apps/cli-linux-x64-gnu@1.5.10:
+    resolution: {integrity: sha512-sOh7slboFQxJCBH5QFNe1Iw3JF2GPWYsq2TlQ6T8GgFh/cb13bK/a1TJG/gOrsRA7/pkIweaSufjpKpPBzAoGQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    dev: false
 
   /@tauri-apps/cli-linux-x64-gnu@1.5.9:
     resolution: {integrity: sha512-9PQA1rE7gh41W2ylyKd5qOGOds55ymaYPml9KOpM0g+cxmCXa+8Wf9K5NKvACnJldJJ6cekWzIyB4eN6o5T+yQ==}
