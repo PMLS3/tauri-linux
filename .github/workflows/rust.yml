@@ -58,7 +58,7 @@ jobs:
           cd src-tauri && cargo build --verbose
 
       - name: Setup ARM build environment
-        uses: pguyot/arm-runner-action@v2
+        uses: pguyot/arm-runner-action@v2.5.2
         with:
           cpu: cortex-a7
           base_image: raspios_lite:latest
