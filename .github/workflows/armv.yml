@@ -53,9 +53,6 @@ jobs:
           sudo apt update
           xargs sudo apt install -y < environment/apt_packages.txt
 
-      - name: Change to src-tauri directory
-        run: cd src-tauri
-
       - name: Setup ARM build environment
         uses: pguyot/arm-runner-action@v2.5.2
         with:
@@ -64,6 +61,9 @@ jobs:
           bind_mount_repository: true
           image_additional_mb: 10240
           optimize_image: false
+        run: |
+          cd src-tauri
+          cargo build --verbose
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
