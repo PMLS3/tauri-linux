@@ -62,8 +62,7 @@ jobs:
           image_additional_mb: 10240
           optimize_image: false
         run: |
-          cd src-tauri
-          cargo build --verbose
+          cd src-tauri && cargo build --verbose
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
