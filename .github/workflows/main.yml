@@ -73,6 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+          TARGET: armv7-unknown-linux-gnueabihf
         with:
           # tauri-action replaces \_\_VERSION\_\_ with the app version
           tagName: ${{ github.ref_name }}
