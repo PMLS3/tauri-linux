@@ -60,9 +60,8 @@ jobs:
       - name: Setup ARM build environment
         uses: pguyot/arm-runner-action@v2.5.2
         with:
-          cpu: cortex-a7
           base_image: raspios_lite:latest
-          cpu_info: raspberrypi_3b
+          cpu: cortex-a7
           bind_mount_repository: true
           image_additional_mb: 10240
           optimize_image: false
