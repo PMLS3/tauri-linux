@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [armv7-unknown-linux-gnueabihf]
     runs-on: ${{ matrix.platform }}
     needs: changelog
     steps:
@@ -48,7 +48,7 @@ jobs:
           rustup update --no-self-update
 
       - name: Install Ubuntu dependencies
-        if: matrix.platform == 'ubuntu-latest'
+        if: matrix.platform == 'armv7-unknown-linux-gnueabihf'
         run: |
           sudo apt update
           xargs sudo apt install -y < environment/apt_packages.txt
