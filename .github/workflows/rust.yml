@@ -68,7 +68,7 @@ jobs:
 
       - name: Change directory back
         run: |
-          cd..
+          cd ..
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
