@@ -55,7 +55,7 @@ jobs:
 
       - name: Change directory and build
         run: |
-          cd src-tauri && cargo build --verbose
+          cd src-tauri
 
       - name: Setup ARM build environment
         uses: pguyot/arm-runner-action@v2.5.2
