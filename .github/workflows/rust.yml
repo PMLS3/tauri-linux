@@ -66,9 +66,13 @@ jobs:
           image_additional_mb: 10240
           optimize_image: false
 
-      # - name: Change directory back
-      #   run: |
-      #     cd ..
+      - name: Change directory back
+        run: |
+          cd ..
+
+      - name: Install Tauri CLI
+        run: |
+          pnpm install @tauri-apps/cli-linux-x64-gnu
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
