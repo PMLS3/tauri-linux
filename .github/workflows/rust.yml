@@ -72,6 +72,7 @@ jobs:
 
       - name: Install Tauri
         run: |
+          pnpm install
           pnpm i @tauri-apps/cli-linux-x64-gnu
 
       - name: Build Tauri app for ARMv7 Linux
