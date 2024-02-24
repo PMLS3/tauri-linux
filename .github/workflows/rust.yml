@@ -52,7 +52,6 @@ jobs:
         run: |
           sudo apt update
           xargs sudo apt install -y < environment/apt_packages.txt
-          sudo apt install -y qemu qemu-user-static binfmt-support parted wget dosfstools zip
 
       - name: Change directory and build
         run: |
