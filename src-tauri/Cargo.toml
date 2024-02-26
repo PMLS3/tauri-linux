@@ -10,6 +10,9 @@ rust-version = "1.65"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build]
+target = "armv7-unknown-linux-gnueabihf"
+
 [build-dependencies]
 tauri-build = { version = "1.5", features = [] }
 
