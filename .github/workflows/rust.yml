@@ -38,10 +38,10 @@ jobs:
         with:
           node-version: latest
 
-      # - name: Setup pnpm
-      #   uses: pnpm/action-setup@v3
-      #   with:
-      #     version: 8
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
 
       - name: Setup Rust
         run: |
@@ -83,7 +83,6 @@ jobs:
             npm cache clean --force
             rm -rf 
             npm i pnpm -g
-            pnpm store prune
             pnpm install --force
             # Build the application
             pnpm tauri build --target armv7-unknown-linux-gnueabihf
