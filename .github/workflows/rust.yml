@@ -81,10 +81,12 @@ jobs:
             # cargo install tauri-cli
             # Install frontend dependencies
             npm cache clean --force
-            rm -rf node_modules
-            npm install --force
+            rm -rf 
+            npm i pnpm -g
+            pnpm store prune
+            pnpm install --force
             # Build the application
-            npm run tauri build --target armv7-unknown-linux-gnueabihf
+            pnpm tauri build --target armv7-unknown-linux-gnueabihf
       - name: Upload deb bundle
         uses: actions/upload-artifact@v3
         with:
