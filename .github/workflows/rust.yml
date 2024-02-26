@@ -87,6 +87,7 @@ jobs:
             # CD back
             cd ..
             # Install frontend dependencies
+            npm install pnpm -g
             pnpm install
             # Build the application
             pnpm tauri build --target armv7-unknown-linux-gnueabihf
