@@ -38,10 +38,10 @@ jobs:
         with:
           node-version: latest
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+      # - name: Setup pnpm
+      #   uses: pnpm/action-setup@v3
+      #   with:
+      #     version: 8
 
       - name: Setup Rust
         run: |
@@ -79,6 +79,9 @@ jobs:
             # Install build tools and tauri-cli requirements
             apt-get install -y libwebkit2gtk-4.0-dev build-essential wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
             # Install frontend dependencies
+            npm cache clean --force
+            rm -rf node_modules
+            rm package-lock.json
             npm install
             # Build the application
             npm tauri build --target armv7-unknown-linux-gnueabihf
@@ -94,8 +97,8 @@ jobs:
 
       - name: Install Tauri
         run: |
-          pnpm install
-          pnpm i @tauri-apps/cli-linux-x64-gnu
+          npm install
+          npm i @tauri-apps/cli-linux-x64-gnu
 
       - name: Build Tauri app for ARMv7 Linux
         uses: tauri-apps/tauri-action@v0
