@@ -1948,6 +1948,7 @@ dependencies = [
  "openssl-sys",
  "serde",
  "serde_json",
+ "soup2-sys",
  "tauri",
  "tauri-build",
  "tauri-plugin-single-instance",
