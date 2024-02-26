@@ -82,7 +82,6 @@ jobs:
             # Install frontend dependencies
             npm cache clean --force
             rm -rf 
-            npm i pnpm -g
             pnpm install --force
             # Build the application
             pnpm tauri build --target armv7-unknown-linux-gnueabihf
