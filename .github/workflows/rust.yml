@@ -81,7 +81,6 @@ jobs:
             # Install frontend dependencies
             npm cache clean --force
             rm -rf node_modules
-            rm package-lock.json
             npm install
             # Build the application
             npm tauri build --target armv7-unknown-linux-gnueabihf
