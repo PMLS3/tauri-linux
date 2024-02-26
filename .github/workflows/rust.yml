@@ -81,7 +81,7 @@ jobs:
             # Install frontend dependencies
             npm cache clean --force
             rm -rf node_modules
-            npm install
+            npm install --force
             # Build the application
             npm tauri build --target armv7-unknown-linux-gnueabihf
       - name: Upload deb bundle
