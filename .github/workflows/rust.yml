@@ -53,10 +53,6 @@ jobs:
           sudo apt update
           xargs sudo apt install -y < environment/apt_packages.txt
 
-      - name: Change directory and build
-        run: |
-          cd src-tauri
-
       - name: Setup ARM build environment
         uses: pguyot/arm-runner-action@v2.5.2
         with:
@@ -80,12 +76,8 @@ jobs:
             curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash
             # Install framework specific packages
             apt-get install -y nodejs
-            # npm install next@latest react@latest react-dom@latest eslint-config-next@latest
             # Install build tools and tauri-cli requirements
             apt-get install -y libwebkit2gtk-4.0-dev build-essential wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
-            # cargo install tauri-cli
-            # CD back
-            cd ..
             # Install frontend dependencies
             npm install
             # Build the application
