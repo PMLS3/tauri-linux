@@ -87,10 +87,10 @@ jobs:
             # CD back
             cd ..
             # Install frontend dependencies
-            npm install pnpm -g
-            pnpm install
+            # ånpm install pnpm -g
+            # pnpm install
             # Build the application
-            pnpm tauri build --target armv7-unknown-linux-gnueabihf
+            npm tauri build --target armv7-unknown-linux-gnueabihf
       - name: Upload deb bundle
         uses: actions/upload-artifact@v3
         with:
