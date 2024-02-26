@@ -78,13 +78,13 @@ jobs:
             apt-get install -y nodejs
             # Install build tools and tauri-cli requirements
             apt-get install -y libwebkit2gtk-4.0-dev build-essential wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
-            cargo install tauri-cli
+            # cargo install tauri-cli
             # Install frontend dependencies
             npm cache clean --force
             rm -rf node_modules
             npm install --force
             # Build the application
-            npm tauri build --target armv7-unknown-linux-gnueabihf
+            npm run tauri build --target armv7-unknown-linux-gnueabihf
       - name: Upload deb bundle
         uses: actions/upload-artifact@v3
         with:
