@@ -64,6 +64,7 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
+          rustup target add armv7-unknown-linux-gnueabihf
           pnpm tauri build --target armv7-unknown-linux-gnueabihf
 
       - name: Upload deb bundle
