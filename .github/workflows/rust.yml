@@ -69,6 +69,17 @@ jobs:
       - name: corresponding linker for armv7
         run: sudo apt-get install -y gcc-arm-linux-gnueabihf
 
+      - name: Configure apt to use a different mirror
+        run: |
+          sudo sed -i 's/http:\/\/security\.ubuntu\.com\/ubuntu\//http:\/\/archive\.ubuntu\.com\/ubuntu\//g' /etc/apt/sources.list
+          sudo apt-get update
+
+      - name: Print Debugging Information
+        run: |
+          uname -a
+          cat /etc/apt/sources.list
+          sudo apt-get update
+
       - name: respective architecture in the package manager
         run: sudo dpkg --add-architecture armhf
 
