@@ -1,4 +1,4 @@
-name: Build for Linux ARM
+name: Build for Linux ARM (Raspberry Pi)
 on:
   workflow_dispatch:
 
