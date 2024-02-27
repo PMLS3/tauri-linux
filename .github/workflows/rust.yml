@@ -59,7 +59,14 @@ jobs:
             apt-get install -y nodejs
             # Install build tools and tauri-cli requirements
             apt-get install -y libwebkit2gtk-4.0-dev build-essential wget libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
-            cargo install tauri-cli
+
+      - name: Configure pkg-config for cross-compilation
+        run: |
+          export PKG_CONFIG_ALLOW_CROSS=1
+          export PKG_CONFIG_ALLOW_CROSS_armv7_unknown_linux_gnueabihf=1
+          export PKG_CONFIG_SYSROOT_DIR=/usr/arm-linux-gnueabihf/
+          export PKG_CONFIG_PATH=/usr/arm-linux-gnueabihf/usr/lib/pkgconfig:/usr/arm-linux-gnueabihf/usr/share/pkgconfig
+          export PKG_CONFIG=arm-linux-gnueabihf-pkg-config
 
       - name: Install dependencies
         run: |
