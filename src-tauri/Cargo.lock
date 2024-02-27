@@ -1945,7 +1945,7 @@ name = "kiosk"
 version = "0.0.0"
 dependencies = [
  "dbus",
- "openssl-sys",
+ "openssl",
  "serde",
  "serde_json",
  "soup2-sys",

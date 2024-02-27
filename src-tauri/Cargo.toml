@@ -25,8 +25,9 @@ tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", 
 tauri-plugin-single-instance = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
 window-shadows = {git = "https://github.com/tauri-apps/window-shadows", branch = "dev" }
 tokio = { version = "1.36.0", features = ["time"] }
-openssl-sys = {version = "0.9", features = ["vendored"] }
+openssl-sys = {version = "0.10.35", features = ["vendored"] }
 soup2-sys = "=0.2.0"
+
 
 
 [target.armv7-unknown-linux-gnueabihf]
