@@ -86,8 +86,10 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libssl-dev libappindicator3-dev librsvg2-dev
 
-      - name: PKG_CONFIG_SYSROOT_DIR
-        run: export PKG_CONFIG_SYSROOT_DIR=/usr/arm-linux-gnueabihf/
+      - name: Configure pkg-config for ARMv7 cross-compilation
+        run: |
+          export PKG_CONFIG_SYSROOT_DIR=/usr/arm-linux-gnueabihf/
+          export PKG_CONFIG_PATH=/usr/arm-linux-gnueabihf/usr/lib/pkgconfig:/usr/arm-linux-gnueabihf/usr/share/pkgconfig
 
       - name: Install dependencies
         run: |
