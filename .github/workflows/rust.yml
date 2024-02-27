@@ -91,6 +91,7 @@ jobs:
           wget http://ftp.debian.org/debian/pool/main/p/pkg-config/pkg-config_0.29-6_armhf.deb
           sudo dpkg -i pkg-config_0.29-6_armhf.deb
           sudo apt-get install -f
+          sudo apt-get install -y libc6 libglib2.0-0
 
       - name: Configure pkg-config for cross-compilation
         run: |
