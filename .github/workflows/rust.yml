@@ -40,7 +40,7 @@ jobs:
             cargo install tauri-cli
             yarn
             # --bundles deb
-            yarn rls
+            yarn tauri build
       - name: Upload deb bundle
         uses: actions/upload-artifact@v4
         with:
