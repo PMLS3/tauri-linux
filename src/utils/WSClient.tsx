@@ -96,6 +96,7 @@ class WSClient {
 
   private onConnection(_instance: Websocket, _ev: Event) {
     console.log("WebSocket connected");
+    alert("WebSocket connected");
     this.start.bind(this)
   }
 
@@ -109,6 +110,7 @@ class WSClient {
 
   private onRetry(_instance: Websocket, _ev: Event) {
     console.log("retrying...");
+    alert("retrying...");
     this.failed();
   }
 

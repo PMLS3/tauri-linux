@@ -4,6 +4,7 @@ import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 import ProductCard from '../../components/ProductCard';
 import { KioskContext, ProductPagesContext } from '../../contexts/KioskContext';
 import WSClient from '../../utils/WSClient';
+import config from "../../App.config";
 
 function ProductSelectionPage() {
   const kiosk = useContext(KioskContext);
@@ -119,8 +120,8 @@ function ProductSelectionPage() {
       <div className="content-bg d-flex flex-column text-center">
         <div className="my-auto" />
         <div className="">
-          <h1>Loading Kiosk</h1>
-          <p className="lead">Establishing connection...</p>
+          <h1>Loading Kiosk {pages.length}</h1>
+          <p className="lead">Establishing connection... {config.WebSocketUrl}</p>
         </div>
         <div className="my-auto" />
       </div>
