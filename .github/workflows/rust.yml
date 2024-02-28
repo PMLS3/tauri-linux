@@ -25,7 +25,8 @@ jobs:
             export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
             apt update -y --allow-releaseinfo-change
             apt upgrade -y
-            apt autoremove -y
+            apt autoremove -
+            apt-get install qemu-system
             # install Tauri dependencies
             xargs apt install -y < environment/apt_packages.txt
             # install rust and cargo
