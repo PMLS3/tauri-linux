@@ -1,8 +1,5 @@
 name: Build for Linux ARM (Raspberry Pi)
 on:
-    push:
-      tags:
-        - "v*"
   workflow_dispatch:
 
 env:
