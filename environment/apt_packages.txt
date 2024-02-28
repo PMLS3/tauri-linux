@@ -7,10 +7,3 @@ libssl-dev
 libgtk-3-dev
 libayatana-appindicator3-dev
 librsvg2-dev
-qemu 
-qemu-user-static 
-binfmt-support 
-parted 
-wget 
-dosfstools 
-zip
