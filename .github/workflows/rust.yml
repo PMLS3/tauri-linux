@@ -1,9 +1,12 @@
 name: Build for Linux ARM (Raspberry Pi)
 on:
+  push:
+    tags:
+      - "v*"
   workflow_dispatch:
 
 env:
-  APP_NAME: "Sample Desktop App"
+  APP_NAME: "KIOS APP ARM"
 
 jobs:
   build-arm:

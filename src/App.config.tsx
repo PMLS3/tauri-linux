@@ -1,8 +1,13 @@
-const BaseUrl = import.meta.env.REACT_APP_KAGENT_URL || 'http://kiosk.local:8080';
-const WebSocketUrl = import.meta.env.REACT_APP_WEBSOCKET_URL || 'ws://kiosk.local:8080/kiosk';
+// const BaseUrl = import.meta.env.REACT_APP_KAGENT_URL || 'http://kiosk.local:8080';
+// const WebSocketUrl = import.meta.env.REACT_APP_WEBSOCKET_URL || 'ws://kiosk.local:8080/kiosk';
 // const WebSocketUrl = import.meta.env.REACT_APP_WEBSOCKET_URL || 'ws://kiosk.local:8080/kiosk';
 
-const useWebSocket = (import.meta.env.REACT_APP_USE_WEB_SOCKET || 'true') === 'true';
+const BaseUrl = 'http://kiosk.local:8080';
+const WebSocketUrl = 'ws://kiosk.local:8080/kiosk';
+
+// const useWebSocket = (import.meta.env.REACT_APP_USE_WEB_SOCKET || 'true') === 'true';
+
+const useWebSocket =  'true';
 
 const useTieredProductSelectionPage = false
 
