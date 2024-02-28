@@ -27,6 +27,7 @@ jobs:
             apt upgrade -y
             apt autoremove -y
             # install Tauri dependencies
+            sudo apt-get update
             xargs apt install -y < environment/apt_packages.txt
             # install rust and cargo
             curl https://sh.rustup.rs -sSf | sh -s -- -y
