@@ -8,6 +8,7 @@ interface IWSClient {
   pay(amount: number, currency: string, productID?: number): void;
   cancel(): void;
   redirectCallback?: WebsocketCallback;
+  getStatus(): string;
 }
 
 class WSClient {
@@ -17,6 +18,9 @@ class WSClient {
   static dummyWSClient: IWSClient = {
     pay(_amount: number, _currency: string, _productID?: number) {},
     cancel() {},
+    getStatus() {
+      return "Disconnected";
+    }
   };
 
   // didOpen?: () => void
@@ -43,6 +47,14 @@ class WSClient {
       return WSClient.instance;
     }
     return WSClient.dummyWSClient;
+  }
+
+  public getStatus(): string {
+    if (this.ws.isConnected()) {
+      return "Connected";
+    } else {
+      return "Disconnected";
+    }
   }
 
   public static setup(callback: WebsocketCallback): IWSClient {
@@ -96,7 +108,6 @@ class WSClient {
 
   private onConnection(_instance: Websocket, _ev: Event) {
     console.log("WebSocket connected");
-    alert("WebSocket connected");
     this.start.bind(this)
   }
 
@@ -110,7 +121,6 @@ class WSClient {
 
   private onRetry(_instance: Websocket, _ev: Event) {
     console.log("retrying...");
-    alert("retrying...");
     this.failed();
   }
 

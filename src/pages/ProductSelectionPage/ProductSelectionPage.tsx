@@ -4,7 +4,6 @@ import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 import ProductCard from '../../components/ProductCard';
 import { KioskContext, ProductPagesContext } from '../../contexts/KioskContext';
 import WSClient from '../../utils/WSClient';
-import config from "../../App.config";
 
 function ProductSelectionPage() {
   const kiosk = useContext(KioskContext);
@@ -15,7 +14,7 @@ function ProductSelectionPage() {
 
   const history = useNavigate();
   const [timerCounter, setTimerCounter] = useState(0);
-
+  const status = WSClient.getInstance().getStatus();
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTimerCounter((prevCounter) => prevCounter + 1);
@@ -121,7 +120,7 @@ function ProductSelectionPage() {
         <div className="my-auto" />
         <div className="">
           <h1>Loading Kiosk {pages.length}</h1>
-          <p className="lead">Establishing connection... {config.WebSocketUrl}</p>
+          <p className="lead">Establishing connection... - {status}</p>
         </div>
         <div className="my-auto" />
       </div>
